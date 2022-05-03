@@ -2,143 +2,218 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Store</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Online Store</title>
 
-    <style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 50px;
+    }
 
-/* Float four columns side by side */
-.columnleft{
-  float: left;
-  width: 100%;
-  padding: 0 10px;
-}
-.columncenter{
-  float: center;
-  width: 100%;
-  padding: 0 10px;
-}
+    /* Remove extra left and right margins, due to padding */
+    .row {
+      margin: 0 -5px;
+    }
 
-/* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
 
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 2%;
+      text-align: center;
+      background-color: rgb(255, 255, 116);
 
-/* Style the counter cards */
+    }
 
-        .parallax {
-            background-image: url("parallax.jpg");
+    .parallax {
+      background-image: url("image.jpg");
 
-            min-height: 500px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: auto;
-            width: auto;
+      min-height: 500px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: auto;
+      width: auto;
 
-        }
+    }
 
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-            width: 40%;
-        }
+    .fa:hover {
+      opacity: 0.9;
+    }
 
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
+    .fa-linkedin {
+      background: #007bb5;
+      color: white;
+    }
 
-        .container {
-            padding: 2px 16px;
-        }
-    </style>
+    .fa-pinterest {
+      background: #cb2027;
+      color: white;
+    }
+
+    .fa-instagram {
+      background: #bc2a8d;
+      color: white;
+    }
+
+    .fa {
+      padding: 20px;
+      font-size: 40px;
+      width: 80px;
+      text-decoration: none;
+      margin: 5px 80px;
+    }
+
+    h1 {
+      color: green;
+    }
+
+    .button {
+      background-color: #fc4918;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .button:hover,
+    .button:active {
+      background-color: red;
+    }
+  </style>
 
 </head>
 
 <body>
-    <center>
-        <h1 style="font-size: 1.5cm; color: #000000;background-color: rgb(215, 255, 205); width: 35cm;">AUUSI</h1>
-    </center>
-    <div class="parallax"><br>
-        <marquee direction="right" behavior="alternate"
-            style="border:rgb(0, 0, 0) 2px SOLID; color: rgb(0, 0, 0); background-color: rgb(255, 255, 116) ; font-size: 0.7cm;">
-            Welcome to the Store, Bishes!
-        </marquee>
-        <br><br>
-        
-        <div class="row">
-            <div class="columnleft">
-              <div class="card" style="background-color: rgb(249, 235, 81); width: 20%; margin-left: 2cm;">
-                <img src="toner.jpg" alt="oops" style="width:8cm; height: 50%;" >
-                
-                <div class="container" >
-                    <a
-                        href="https://www.amazon.in/Minimalist-Tightening-Exfoliation-Sensitive-Hydrating/dp/B08S581RXJ/ref=sr_1_1_sspa?crid=3BGU0SELWWXSE&keywords=toner&qid=1651216314&s=beauty&sprefix=pltoner%2Cbeauty%2C454&sr=1-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzUzdEWkVTWTA4NU8xJmVuY3J5cHRlZElkPUEwNjc1MjY0MkI3OFRVMklJNjdYRCZlbmNyeXB0ZWRBZElkPUEwNjU1NjgwNkNYOTBBN0JRUE9IJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1">
-                        <h4 style="font-size: 0.7cm; color: rgb(210, 33, 30);"><b>Minimalist Toner</b></h4>
-                    </a>
-    
-                    <h2 style="font-size: 0.5cm;">PHA 3% Alcohol Free Face Toner, 150 ml </h2>
-                </div>
-              </div>
-            </div>
-          
-            <div class="columncenter">
-                <div class="card" style="background-color: rgb(249, 235, 81); width: 20%; margin-left: 2cm;">
-                    <img src="foundation.jpg" alt="oops" style="width:8cm; height: 50%;" >
-                    <div class="container" >
-                        <a
-                            href="https://www.amazon.in/SUGAR-Cosmetics-Foundation-Borgia-Undertone/dp/B07PDMMQ9P/ref=sr_1_1_sspa?crid=2ASM2URPDCCZ&keywords=foundation&qid=1651122956&sprefix=fou%2Caps%2C548&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFNQ1k1QzA1WFM5UjYmZW5jcnlwdGVkSWQ9QTA2OTgzNTExUVNHR1ZPOTlEM0oxJmVuY3J5cHRlZEFkSWQ9QTEwMzEzNjMxNjdGSUdRT0cySUc0JndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1">
-                            <h4 style="font-size: 0.7cm; color: rgb(210, 33, 30);"><b>Sugar Foundation</b></h4>
-                        </a>
-        
-                        <h2 style="font-size: 0.5cm;">Shade: 03, Honey</h2>
-              </div>
-            </div>
-            
-            <div class="column">
-              <div class="card">
-                <h3>Card 3</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-              </div>
-            </div>
-            
-            <div class="column">
-              <div class="card">
-                <h3>Card 4</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-              </div>
-            </div>
-          </div>
+  <center>
+    <h1 style="font-size: 1.5cm; color: #000000;background-color: rgb(215, 255, 205); width: 35cm;">AUUSI</h1>
+  </center>
+  <div class="parallax"><br>
 
+    <marquee direction="right" behavior="alternate"
+      style="border:rgb(0, 0, 0) 2px SOLID; color: rgb(0, 0, 0); background-color: rgb(255, 255, 116) ; font-size: 0.7cm;">
+      Welcome to the Store, Lovelies!
+    </marquee>
+    <br><br><br>
+
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="foundation.jpg" alt="Foundations" style="width:100% ; height:7cm">
+          <b>
+            <p style="font-size: 0.7cm;">SUGAR </p>
+          </b>
+          <p style="font-size: 0.5cm;">Foundation Stick - 47 Borgia</p>
+          
+          <b>
+            <p style="font-size: 0.7cm;"><strike>₹999.00</strike> ₹899.00 </p>
+          </b>
+          <div class="button">
+
+            <a href="review1.html" target="_blank" style="color: white">Click here!</a>
+
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="toner.jpg" alt="Toner" style="width:100% ; height:7cm">
+          <b>
+            <p style="font-size: 0.7cm;">Minimalist </p>
+          </b>
+          <p style="font-size: 0.5cm;">Alcohol Free Toner, 150 ml</p>
+          <b>
+            <p style="font-size: 0.7cm;"><strike> ₹549.00</strike> ₹399.00 </p>
+          </b>
+          <div class="button">
+            <a href="review2.html" target="_blank" style="color: white">Click here!</a>
+            
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="facewash.jpg" alt="facewash" style="width:100% ; height:7cm">
+          <b>
+            <p style="font-size: 0.7cm;">Neutrogena </p>
+          </b>
+          <p style="font-size: 0.5cm;">Facewash for oily skin, 175ml</p>
+          <b>
+            <p style="font-size: 0.7cm;"><strike> ₹349.00</strike> ₹249.00 </p>
+          </b>
+          <div class="button">
+            <a href="review3.html" target="_blank" style="color: white">Click here!</a>
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="concealer.jpg" alt="facewah" style="width:100% ; height:7cm">
+          <b>
+            <p style="font-size: 0.7cm;">RENEE </p>
+          </b>
+          <p style="font-size: 0.5cm;">Liquid Concealer - Vanilla, 5ml</p>
+          <b>
+            <p style="font-size: 0.7cm;"><strike> ₹749.00</strike> ₹699.00 </p>
+          </b>
+          <div class="button">
+            <a href="review4.html" target="_blank" style="color: white;">Click here!</a>
+          </div>
+          <br>
+        </div>
+      </div>
 
     </div>
+ 
+    <div style="padding-top: 2cm ;padding-right: 5cm; padding-left: 5cm;" <center>
+      <h1
+        style="font-size: 1.5cm;  background-color: rgb(215, 255, 205); background-origin: padding-box; margin-left: 2cm; text-align: center; margin-right: 2cm;">
+        Contact us</h1>
+      <center><a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-pinterest"></a>
+        <a href="#" class="fa fa-instagram"></a>
+      </center>
+      </center>
+    </div>
+  </div>
+
 </body>
 
 </html>
